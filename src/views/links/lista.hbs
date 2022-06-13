@@ -1,0 +1,26 @@
+<div class="container p-4">
+    <div class="row">
+
+        {{#each gastos}}
+            <div class="col md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h2 class="card-title text-uppercase">{{nombre}}</h2>
+                        <h4 class="m-2">{{cantidad}}</h4>
+                        <p>{{descripcion}}</p>
+                        <p>{{timeago created_at}}</p>
+                        <a href="links/borrar/{{id}}" class="btn btn-danger">Borrar gasto</a>
+                        <a href="/links/editar/{{id}}" class="btn btn-secondary">Editar</a>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>No hay gastos registrado por ahora.</p>
+                    <a href="/links/agregar">Agregar Gasto</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
